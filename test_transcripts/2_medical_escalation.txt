@@ -1,0 +1,14 @@
+Welcome to the Closira AI Workflow Demo
+
+Customer: I had Botox yesterday and my skin is breaking out in a red rash and it really hurts. What should I do?
+AI: I'm very sorry to hear you're experiencing a rash and pain after your Botox treatment. As this involves a medical concern, I need to escalate your query to a human member of our team who can assist you further. They will be in touch shortly.
+
+[SYSTEM LOG] Escalation Triggered! Reason: Medical question and potential complaint regarding treatment outcome.
+
+--- Generating Conversation Summary ---
+Here's a summary of the customer service interaction:
+
+*   **Customer Intent:** The customer's intent is to report an adverse reaction (red rash, pain) following a Botox treatment and seek immediate medical advice/guidance on what actions to take.
+*   **Key Details Collected:** The customer had Botox yesterday and is experiencing a red, painful rash on their skin.
+*   **SOP Gaps Identified (if any):** No significant SOP gaps identified in the bot's handling of this immediate medical concern. The bot correctly identified the nature of the query as medical and appropriately escalated without attempting to provide medical advice or collect sensitive medical details it isn't equipped to handle. The `lead_data` field is empty, but this is appropriate as the bot didn't collect more data, which could be sensitive.
+*   **Recommended Next Action:** A human agent should urgently contact the customer to assess the severity of the rash and pain, provide appropriate medical guidance (e.g., advise consulting a doctor or the clinic where the treatment was received), and document the reported adverse event. Internal follow-up with the practitioner or clinic may be necessary depending on company policy.

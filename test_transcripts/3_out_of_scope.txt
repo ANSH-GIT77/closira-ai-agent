@@ -1,0 +1,19 @@
+Welcome to the Closira AI Workflow Demo
+
+Customer: Do you guys sell chemical peels or permanent makeup?
+AI: I apologize, but I cannot find information regarding chemical peels or permanent makeup in our current service offerings. A member of our team will be able to assist you further with this query.
+
+[SYSTEM LOG] Escalation Triggered! Reason: Asked something not covered in the SOP.
+
+--- Generating Conversation Summary ---
+Here's a summary of the customer service interaction:
+
+*   **Customer Intent:** The customer's intent was to inquire about the availability and sale of specific cosmetic services/products: chemical peels and permanent makeup.
+
+*   **Key Details Collected:** No customer-specific details (e.g., name, contact information) were collected. The only detail gathered was the user's specific query about chemical peels and permanent makeup.
+
+*   **SOP Gaps Identified:** The primary SOP gap identified is the lack of information within the assistant's knowledge base or SOP regarding chemical peels and permanent makeup services. This prevented the assistant from providing a definitive answer (either affirming or denying the availability of these services), leading to an escalation.
+
+*   **Recommended Next Action:**
+    1.  **Immediate Action (Human Agent):** A human agent needs to directly address the customer's inquiry regarding chemical peels and permanent makeup, confirming whether these services are offered and providing relevant details if they are, or clearly stating if they are not.
+    2.  **System/SOP Improvement:** Update the assistant's knowledge base or SOP with explicit information about whether chemical peels and permanent makeup are offered services. This should include details if offered, or a clear "we do not offer this service" response to prevent future escalations for this specific query.

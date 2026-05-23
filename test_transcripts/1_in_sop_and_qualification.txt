@@ -1,0 +1,27 @@
+Welcome to the Closira AI Workflow Demo
+
+Customer: What are your Botox prices?
+AI: Our Botox treatments start from £200. Are you looking to book a consultation, or have you visited Bloom Aesthetics Clinic before?
+Customer: No, I haven't visited before, but I'd like to book a consultation.
+AI: Excellent! Consultations are free at Bloom Aesthetics Clinic. You can book yours via WhatsApp or our website. We are open Monday to Saturday, from 9 am to 7 pm. Please remember that a 24-hour cancellation notice is required.
+Customer: quit 
+
+--- Generating Conversation Summary ---
+Here's a summary of the customer service interaction:
+
+**Customer Intent:**
+The customer initially sought information on Botox prices. After receiving this information, their intent evolved to booking a free consultation for Botox treatments.
+
+**Key Details Collected:**
+*   The customer is a new client (has not visited Bloom Aesthetics Clinic before).
+*   The customer is actively looking to book a consultation.
+*   Botox prices start from £200.
+
+**SOP Gaps Identified:**
+The assistant provided instructions on *how* to book a consultation (via WhatsApp or website, along with opening hours and cancellation policy) but did not proactively offer to *facilitate* the booking within the current interaction. This places the burden on the customer to leave the chat and initiate the booking process themselves, which can add friction and potentially reduce conversion.
+
+**Recommended Next Action:**
+The assistant should proactively engage the customer in the booking process. This could involve:
+*   Asking for their preferred day and time for the consultation, given the clinic's operating hours (e.g., "Great! What day and time works best for your consultation, Monday to Saturday, between 9 am and 7 pm?").
+*   Offering to provide a direct booking link immediately.
+*   Offering to connect them to a human agent to finalize the booking if the automated system cannot.
