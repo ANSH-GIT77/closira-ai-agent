@@ -1,39 +1,248 @@
 # Closira AI Engineering Intern Assignment
 
-A Python-based AI customer support workflow built for the Closira internship assignment. It demonstrates FAQ answering, lead qualification, escalation detection, and automated summarization using the Google Gemini API.
+A Python-based AI customer support workflow built for the Closira internship assignment.  
+This project demonstrates:
 
-## Setup Instructions
-1. Clone this repository.
-2. Create a virtual environment:
+- FAQ answering
+- Lead qualification
+- Escalation detection
+- Automated conversation summarization
+
+Built using the **Google Gemini API** with structured JSON responses for clean backend integration.
+
+---
+
+# Features
+
+- AI-powered customer support workflow
+- Automatic escalation detection
+- Lead information extraction
+- Session summarization
+- Structured JSON response handling
+- Gemini Developer API integration
+- Lightweight and cost-efficient architecture
+
+---
+
+# Tech Stack
+
+- Python
+- Google Gemini API
+- python-dotenv
+- JSON-based response architecture
+
+---
+
+# Project Structure
+
+```bash
+project-folder/
+│
+├── main.py
+├── .env
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# Setup Instructions
+
+## 1. Clone the Repository
+
+```bash
+git clone <your-repository-link>
+cd <repository-folder>
+```
+
+---
+
+## 2. Create Virtual Environment
+
+### Windows (PowerShell)
+
 ```powershell
-   python -m venv venv
-Activate the environment:
+python -m venv venv
+.\venv\Scripts\activate
+```
 
-Windows (PowerShell): .\venv\Scripts\activate
+### Mac/Linux
 
-Mac/Linux: source venv/bin/activate
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-Install dependencies:
+---
 
-PowerShell
-   pip install google-genai python-dotenv
-Create a .env file in the root directory and add your Google Gemini API key:
+## 3. Install Dependencies
 
-Code snippet
-   GEMINI_API_KEY=AIzaSy...your_actual_key_here...
-How to Run
-Run the main script via your terminal:
+```bash
+pip install google-genai python-dotenv
+```
 
-PowerShell
+---
+
+## 4. Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+GEMINI_API_KEY=your_actual_gemini_api_key_here
+```
+
+---
+
+# How to Run
+
+Run the main script:
+
+```bash
 python main.py
-Type your messages as the customer. To end a normal session and generate the final summary, type quit. If an escalation rule is triggered by your input, the system will automatically log the reason and generate the summary for you.
+```
 
-System Architecture & Choices
-Structured JSON Engine: The system uses Gemini's response_mime_type="application/json" capability to force the model to output a dual-layer response. It simultaneously handles the customer-facing text (reply) and backend flags (escalate, escalation_reason, lead_data). This ensures clean separation of concerns between conversational AI and backend routing logic.
+Start chatting as the customer.
 
-Cost Efficiency: Transitioned the project architecture from OpenAI to Google Gemini's Developer Tier to build a robust, production-ready system utilizing high-performance free-tier models (gemini-2.5-flash).
+To end the session and generate the final summary:
 
-Trade-offs & Limitations
-Memory Management: The current implementation appends full structured state data back into the message history array. While highly accurate for maintaining structured state, it consumes context tokens faster over extended multi-turn chat sessions.
+```text
+quit
+```
 
-SOP Storage: The clinic's SOP is currently hardcoded within the codebase as a system instruction configuration. For real enterprise SMB scale, this should be uncoupled from the engine and served via a centralized vector database (RAG pattern) or an external CMS endpoint.
+If an escalation rule is triggered, the system will automatically:
+
+- Detect the escalation
+- Log the escalation reason
+- Generate the final conversation summary
+
+---
+
+# System Architecture & Design Choices
+
+## Structured JSON Engine
+
+The system uses Gemini's:
+
+```python
+response_mime_type="application/json"
+```
+
+This forces the model to return a structured response containing:
+
+```json
+{
+  "reply": "...",
+  "escalate": false,
+  "escalation_reason": "",
+  "lead_data": {}
+}
+```
+
+This architecture cleanly separates:
+
+- Customer-facing responses
+- Backend workflow logic
+- Escalation handling
+- Lead qualification data
+
+---
+
+## Cost Efficiency
+
+The architecture was transitioned from OpenAI APIs to:
+
+### Google Gemini Developer Tier
+
+Using:
+
+```text
+gemini-2.5-flash
+```
+
+Benefits:
+
+- Lower operational cost
+- Fast response generation
+- Production-ready performance
+- Free-tier friendly development
+
+---
+
+# Trade-offs & Limitations
+
+## Memory Management
+
+The current implementation appends structured state data into the message history for every turn.
+
+### Advantage
+
+- Better conversational memory
+- Accurate workflow state tracking
+
+### Limitation
+
+- Higher context token usage during long conversations
+
+---
+
+## SOP Storage
+
+Currently, the clinic SOP is hardcoded inside the system instructions.
+
+### Recommended Production Approach
+
+For real-world enterprise scalability, the SOP layer should be moved to:
+
+- Vector Database (RAG Architecture)
+- External CMS
+- Knowledge Base API
+
+This would allow:
+
+- Dynamic SOP updates
+- Better maintainability
+- Multi-client scalability
+- Easier enterprise deployment
+
+---
+
+# Future Improvements
+
+- RAG-based knowledge retrieval
+- Multi-agent workflow support
+- Database integration
+- Web dashboard
+- Analytics & reporting
+- Voice support
+- Real-time CRM integration
+
+---
+
+# Example Workflow
+
+```text
+Customer Query
+       ↓
+Gemini AI Processing
+       ↓
+Structured JSON Output
+       ↓
+Lead Qualification / FAQ Response
+       ↓
+Escalation Detection
+       ↓
+Final Summary Generation
+```
+
+---
+
+# Author
+
+**Ansh**  
+B.Tech CSE (AI & Edge Computing)
+
+---
+
+# License
+
+This project is created for internship assignment and educational purposes.
